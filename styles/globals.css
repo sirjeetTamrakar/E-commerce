@@ -2,8 +2,13 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  /* font-family: 'Satisfy', cursive; */
+  /* font-family: 'Lobster Two', cursive; */
+  /* font-family: 'Cookie', cursive; */
+  /* font-family: 'Mitr', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  background-color: azure;
 }
 
 a {
