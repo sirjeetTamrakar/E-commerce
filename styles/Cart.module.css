@@ -3,13 +3,24 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2rem;
     row-gap: 2rem;
-    width: 95%;
+    width: 85%;
 }
 
 .center{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .card{
@@ -20,24 +31,47 @@
     flex-direction: column;
 }
 
-.buttons{
+.buttons>button, .buttons1>button{
+    margin-right: 1rem;
+    background-color: rgb(235, 65, 65);
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.buttons1>button{
+    font-size: .8rem;
+    margin-right: 0rem;
+    padding: .5rem .7rem;
+}
+
+.buttons>:last-child{
+    background-color: rgb(76, 76, 219);
+}
+
+.buttons1{
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
 }
 
-.button{
+.button1{
     display: flex;
     justify-content: space-between;
     width: 30%;
     align-items: center;
 }
 
-.button>span, .buttons>span{
-    cursor: pointer;
+.button1>span{
+    font-size: 1rem;
 }
 
-
+.button1>span, .buttons1>button{
+    cursor: pointer;
+}
 
 @media screen and (max-width:1000px) {
     .main{
@@ -54,5 +88,6 @@
 @media screen and (max-width:500px) {
     .main{
         grid-template-columns: repeat(1, 1fr);   
+        width: 90%;
     }
 }

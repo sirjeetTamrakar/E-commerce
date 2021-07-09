@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { commerce } from '../lib/commerce'
 import Products from '../components/Products'
-import Link from 'next/link'
+
 
 const Home = () =>
 {
@@ -14,31 +14,41 @@ const Home = () =>
 		setProducts(data)
 	}
 
-	const fetchCart = async () =>
+	const handleAddToCart = async (productId, quantity) =>
 	{
-		const cart = await commerce.cart.retrieve()
+		const {cart} = await commerce.cart.add(productId, quantity)
 		setCart(cart)
 	}
 
-	const handleAddToCart = async (productId, quantity) =>
+	const handleUpdate = async (productId, quantity) =>
 	{
-		const item = await commerce.cart.add(productId, quantity)
-		setCart(item.cart)
+		const { cart } = await commerce.cart.update(productId, { quantity })
+		setCart(cart)
+	}
+
+	const handleRemove = async (productId) =>
+	{
+		const { cart } = await commerce.cart.remove(productId)
+		setCart(cart)
+	}
+
+	const handleEmptyCart = async () =>
+	{
+		const { cart } = await commerce.cart.empty()
+		setCart(cart)
 	}
 
 	useEffect(() =>
 	{
 		fetchProducts()
-		fetchCart()
 	}, [])
 	
-	console.log(cart)
 
   	return (
 			<div>
 				<Products products={products} onAddToCart={handleAddToCart} />
-		</div>
-	);
+			</div>
+		);
 }
 
 export default Home

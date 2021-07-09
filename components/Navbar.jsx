@@ -21,7 +21,7 @@ const Navbar = () =>
 					<Link href='/cart'>
 						<div className={styles.icon}>
 							<span className='material-icons'>shopping_cart</span>
-							<sup>{cart.total_items}</sup>
+							<sup>{!cart.line_items?0:cart.total_items}</sup>
 						</div>
 					</Link>
 			</div>

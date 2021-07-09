@@ -15,8 +15,8 @@ const Products = ({products, onAddToCart}) => {
 								objectFit='cover'
 								alt={product.name}
 							/>
-							<h1>{product.name}</h1>
-							<p>Rs. {product.price.formatted}</p>
+							<h2>{product.name}</h2>
+							<b>Rs. {(product.price.formatted)}</b>
 							{/* <small dangerouslySetInnerHTML={{ __html: product.description.slice(0, 100) }}/> */}
 							<div className={styles.buttons}>
 								<div className={styles.button}>
@@ -27,6 +27,7 @@ const Products = ({products, onAddToCart}) => {
 								<span
 									className='material-icons'
 									onClick={() => onAddToCart(product.id, 1)}
+									title='Add To Cart'
 								>
 									add_shopping_cart
 								</span>

@@ -1,7 +1,12 @@
 .main{
   display: flex;
   justify-content: space-between;
-  margin: 1rem 2rem;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .icon{
@@ -9,10 +14,14 @@
   cursor: pointer;
 }
 
+.icon>span{
+  font-size: 2rem;
+}
+
 .icon>sup{
   position: absolute;
-  top:-10px;
-  left: 15px;
+  top:-12px;
+  left: 20px;
   background-color: rgb(236, 96, 96);
   border-radius: 50%;
   color: white;
