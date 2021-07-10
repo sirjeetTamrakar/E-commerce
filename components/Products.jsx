@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
+import Link from "next/link";
 import styles from "../styles/Products.module.css";
 
 const Products = ({ products, onAddToCart}) =>
@@ -20,13 +21,15 @@ const Products = ({ products, onAddToCart}) =>
 				<div className={styles.main}>
 					{products.map(product => (
 						<div className={styles.card} key={product.id}>
-							<Image
-								src={product.media.source}
-								height={200}
-								width={300}
-								objectFit='cover'
-								alt={product.name}
-							/>
+							<Link href={`/${product.id}`}>
+								<Image
+									src={product.media.source}
+									height={200}
+									width={300}
+									objectFit='cover'
+									alt={product.name}
+								/>
+							</Link>
 							<h2>{product.name}</h2>
 							<b>Rs. {product.price.formatted}</b>
 							{/* <small dangerouslySetInnerHTML={{ __html: product.description.slice(0, 100) }}/> */}

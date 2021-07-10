@@ -1,6 +1,6 @@
 .main{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     column-gap: 2rem;
     row-gap: 2rem;
     width: 85%;
@@ -18,17 +18,21 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
+    width: 85%;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .card{
     background-color: white;
     border-radius: 1rem;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.card>div{
+    padding-left: 2rem;
 }
 
 .buttons>button, .buttons1>button{
@@ -55,18 +59,29 @@
 .buttons1{
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .button1{
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: max-content;
     align-items: center;
+    background-color:slateblue;
+    border-radius: .5rem;
+    color: white;
+}
+
+.button1>b{
+    background-color: white;
+    padding: .4rem 1rem;
+    border: 1px solid rgb(180, 179, 179);
+    color: black;
 }
 
 .button1>span{
     font-size: 1rem;
+    padding: 0 1rem;
 }
 
 .button1>span, .buttons1>button{
@@ -74,8 +89,8 @@
 }
 
 @media screen and (max-width:1000px) {
-    .main{
-        grid-template-columns: repeat(3, 1fr);   
+    .button1>span{
+        padding: 0 .4rem;
     }
 }
 

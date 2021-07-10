@@ -13,6 +13,7 @@ const Cart = () =>
 		setCart(cart);
 	};
 
+	console.log(cart)
 	useEffect(() => {
 		fetchCart();
 	}, []);
@@ -55,16 +56,28 @@ const Cart = () =>
 						objectFit='cover'
 						alt={item.name}
 					/>
-					<h2>{item.name}</h2>
-					<b>Rs. {item.line_total.formatted}</b>
-					{/* <small dangerouslySetInnerHTML={{ __html: item.description.slice(0, 100) }}/> */}
-					<div className={styles.buttons1}>
-						<div className={styles.button1}>
-							<span className='material-icons' onClick={() => handleUpdate(item.id, item.quantity-1)}>remove</span>
-							<b>{item.quantity}</b>
-							<span className='material-icons' onClick={() => handleUpdate(item.id, item.quantity+1)}>add</span>
+					<div>
+						<h2>{item.name}</h2>
+						<b>Rs. {item.line_total.formatted}</b>
+						<small dangerouslySetInnerHTML={{ __html: item.description}}/>
+						<div className={styles.buttons1}>
+							<div className={styles.button1}>
+								<span
+									className='material-icons'
+									onClick={() => handleUpdate(item.id, item.quantity - 1)}
+								>
+									{item.quantity === 1 ? "delete_outline" : "remove"}
+								</span>
+								<b>{item.quantity}</b>
+								<span
+									className='material-icons'
+									onClick={() => handleUpdate(item.id, item.quantity + 1)}
+								>
+									add
+								</span>
+							</div>
+							<button onClick={() => handleRemove(item.id)}>REMOVE</button>
 						</div>
-						<button onClick={() => handleRemove(item.id)}>REMOVE</button>
 					</div>
 				</div>
 			))}
@@ -73,9 +86,6 @@ const Cart = () =>
 	return (
 		<div className={styles.center}>
 			<h1>Your Cart</h1>
-			<div className={styles.main}>
-				{!cart.line_items.length ? <EmptyCart /> : <CartList />}
-			</div>
 			{cart.line_items.length && (
 				<div className={styles.options}>
 					<h2>Total : Rs. {cart.subtotal.formatted}</h2>
@@ -85,6 +95,9 @@ const Cart = () =>
 					</div>
 				</div>
 			)}
+			<div className={styles.main}>
+				{!cart.line_items.length ? <EmptyCart /> : <CartList />}
+			</div>
 		</div>
 	);
 }
