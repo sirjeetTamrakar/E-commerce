@@ -7,6 +7,7 @@ const Home = () =>
 {
 	const [products, setProducts] = useState([])
 	const [cart, setCart] = useState({})
+	console.log(products)
 
 	const fetchProducts = async () =>
 	{
@@ -17,24 +18,6 @@ const Home = () =>
 	const handleAddToCart = async (productId, quantity) =>
 	{
 		const {cart} = await commerce.cart.add(productId, quantity)
-		setCart(cart)
-	}
-
-	const handleUpdate = async (productId, quantity) =>
-	{
-		const { cart } = await commerce.cart.update(productId, { quantity })
-		setCart(cart)
-	}
-
-	const handleRemove = async (productId) =>
-	{
-		const { cart } = await commerce.cart.remove(productId)
-		setCart(cart)
-	}
-
-	const handleEmptyCart = async () =>
-	{
-		const { cart } = await commerce.cart.empty()
 		setCart(cart)
 	}
 

@@ -6,7 +6,7 @@
     width: 95%;
 }
 
-.center{
+.center, .flex{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,22 +22,42 @@
 
 .buttons{
     display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-}
-
-.button{
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
+    justify-content: center;
     align-items: center;
-}
-
-.button>span, .buttons>span{
+    margin-top: 1rem;
     cursor: pointer;
+    background-color: slateblue;
+    padding: 1rem .5rem;
+    color: white;
+    border-radius: .5rem;
+    letter-spacing: .1rem;
+    word-spacing: .3rem;
+}
+
+.buttons>:first-child{
+    margin-right: 1rem;
 }
 
 
+
+.alert{
+    text-align: center;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    background-color:#54d154;
+    padding: 1rem;
+    width: max-content;
+    color: rgb(255, 255, 255);
+    border-radius: .5rem;
+    animation: alert .2s linear;
+}
+
+@keyframes alert {
+    0%{
+        transform: translateY(50px);
+    }
+}
 
 @media screen and (max-width:1000px) {
     .main{

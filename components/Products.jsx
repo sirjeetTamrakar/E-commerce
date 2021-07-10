@@ -1,9 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import styles from "../styles/Products.module.css";
 
-const Products = ({products, onAddToCart}) => {
-    return (
+const Products = ({ products, onAddToCart}) =>
+{
+	const [alert, setAlert] = useState(false)
+
+	useEffect(() =>
+	{
+		const timeout = setTimeout(() =>
+		{
+			setAlert(false)
+		}, 2000)
+		return () => clearTimeout(timeout)
+	}, [alert])
+	return (
+		<>
 			<div className={styles.center}>
 				<div className={styles.main}>
 					{products.map(product => (
@@ -16,27 +28,25 @@ const Products = ({products, onAddToCart}) => {
 								alt={product.name}
 							/>
 							<h2>{product.name}</h2>
-							<b>Rs. {(product.price.formatted)}</b>
+							<b>Rs. {product.price.formatted}</b>
 							{/* <small dangerouslySetInnerHTML={{ __html: product.description.slice(0, 100) }}/> */}
-							<div className={styles.buttons}>
-								<div className={styles.button}>
-									<span className='material-icons'>remove</span>
-									<div>2</div>
-									<span className='material-icons'>add</span>
-								</div>
-								<span
-									className='material-icons'
-									onClick={() => onAddToCart(product.id, 1)}
-									title='Add To Cart'
-								>
-									add_shopping_cart
-								</span>
+							<div
+								className={styles.buttons}
+								onClick={() => (onAddToCart(product.id, 1), setAlert(true))}
+								title='Add To Cart'
+							>
+								<span className='material-icons'>add_shopping_cart</span>
+								<div>ADD TO CART</div>
 							</div>
 						</div>
 					))}
 				</div>
 			</div>
-		);
+			<div className={styles.flex}>
+				{alert && <p className={styles.alert}>Item added to cart!</p>}
+			</div>
+		</>
+	);
 }
 
 export default Products
