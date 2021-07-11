@@ -19,12 +19,14 @@ const Products = ({ products, onAddToCart}) =>
 	return (
 		<>
 			<div className={styles.center}>
+				<h1>PRODUCTS</h1>
 				<div className={styles.main}>
 					{products.map(product => (
 						<div className={styles.card} key={product.id}>
 							<Link href={`/products/${product.permalink}`}>
 								<Image
 									src={product.media.source}
+									className={styles.img}
 									height={300}
 									width={300}
 									objectFit='cover'
@@ -44,9 +46,7 @@ const Products = ({ products, onAddToCart}) =>
 									<div>Add to Cart</div>
 								</div>
 								<Link href={`/products/${product.permalink}`}>
-									<div className={styles.details}>
-										View 
-									</div>
+									<div className={styles.details}>View</div>
 								</Link>
 							</div>
 						</div>

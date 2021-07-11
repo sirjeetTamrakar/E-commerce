@@ -12,6 +12,10 @@
     justify-content: center;
 }
 
+.center{
+    flex-direction: column;
+}
+
 .card{
     background-color: white;
     border-radius: 1rem;
@@ -20,6 +24,7 @@
     flex-direction: column;
     cursor: pointer;
 }
+
 
 .btns{
     display: flex;
@@ -50,6 +55,14 @@
     border-radius: .5rem;
     width: 5rem;
     text-align: center;
+}
+
+.img{
+    transition: .5s all ease-in-out;
+}
+
+.img:hover{
+    transform: scale(1.1);
 }
 
 .alert{

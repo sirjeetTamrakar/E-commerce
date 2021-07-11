@@ -52,17 +52,16 @@ const Cart = () =>
 					<Link href={`/products/${item.permalink}`}>
 						<Image
 							src={item.media.source}
-							height={300}
-							width={200}
+							height={200}
+							width={300}
+							objectFit='cover'
 							alt={item.name}
 						/>
 					</Link>
-					<div className={styles.info}>
-						<div>
+					<div>
 						<div>{item.name}</div>
-						<h4>(Rs. {item.price.formatted} x {item.quantity})</h4>
-							<b>Rs. {item.line_total.formatted}</b>
-						</div>
+						<h3>Rs. {item.line_total.formatted}</h3>
+						<p style={{color:'gray'}}>(Rs. {item.price.formatted} x {item.quantity})</p>
 						<small dangerouslySetInnerHTML={{__html: item.description}} />
 						<div className={styles.buttons1}>
 							<div className={styles.button1}>

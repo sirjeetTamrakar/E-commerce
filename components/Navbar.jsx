@@ -19,7 +19,7 @@ const Navbar = () =>
 			<div className={styles.main}>
 				<Link href='/'>
 					<b style={{cursor:'pointer'}}>E-Commerce</b>
-				</Link>
+			</Link>
 				<Link href='/cart'>
 					<div className={styles.icon}>
 						<span className='material-icons'>shopping_cart</span>
