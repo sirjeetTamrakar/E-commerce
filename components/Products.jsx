@@ -25,13 +25,15 @@ const Products = ({ products, onAddToCart}) =>
 							<Link href={`/products/${product.permalink}`}>
 								<Image
 									src={product.media.source}
-									height={200}
+									height={300}
 									width={300}
 									objectFit='cover'
 									alt={product.name}
 								/>
 							</Link>
-							<h2>{product.name}</h2>
+							<Link href={`/products/${product.permalink}`}>
+								<h2>{product.name}</h2>
+							</Link>
 							<b>Rs. {product.price.formatted}</b>
 							{/* <small dangerouslySetInnerHTML={{ __html: product.description.slice(0, 100) }}/> */}
 							<div

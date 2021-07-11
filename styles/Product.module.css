@@ -1,38 +1,87 @@
 .main{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 80%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    width: 90%;
     margin: auto;
+    column-gap: 2rem;
 }
 
 .head{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 2rem 0;
 }
 
 .buttons{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: max-content;
+    justify-content:flex-end;
+    flex-direction: column;
+    row-gap: .5rem;
+    cursor: pointer;
+
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
 }
 
 .button{
+    margin-top: 1rem;
+    background-color: rgb(178, 174, 209);
+    text-align: center;
+    padding:.5rem;
+    color: white;
+    border-radius: .5rem;
+    width: 10rem;
+}
+
+
+.cart{
+    background-color: rgb(231, 188, 108);
+    color: white;
+    padding: .5rem;
+    border-radius: .5rem;
+    width: 10rem;
+    text-align: center;
+}
+
+.flex, .image{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
-    cursor: pointer;
-    background-color: slateblue;
-    padding: 1rem .5rem;
-    color: white;
-    border-radius: .5rem;
-    letter-spacing: .1rem;
-    word-spacing: .3rem;
 }
 
-.button>:first-child{
-    margin-right: 1rem;
+.image{
+    background-color: white;
+    width: 100%;
+    height: max-content;
+}
+
+.alert{
+    text-align: center;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    background-color:#54d154;
+    padding: 1rem;
+    width: max-content;
+    color: rgb(255, 255, 255);
+    border-radius: .5rem;
+    animation: alert .2s linear;
+}
+
+@keyframes alert {
+    0%{
+        transform: translateY(50px);
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .main{
+        grid-template-columns: 1fr;
+    }
 }
