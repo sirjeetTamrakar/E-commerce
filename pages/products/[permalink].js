@@ -75,7 +75,6 @@ export default function ProductPage({ product })
 								alt={product.name}
 								onClick={() => setImg(asset.url)}
 								onMouseOver={() => setImg(asset.url)}
-								// onMouseLeave={(prevState) => setImg(prevState)}
 							/>
 						</div>
 					))}

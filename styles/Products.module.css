@@ -4,6 +4,7 @@
     column-gap: 2rem;
     row-gap: 2rem;
     width: 95%;
+    min-height: 100vh;
 }
 
 .center, .flex{
