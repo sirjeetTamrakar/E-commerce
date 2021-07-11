@@ -49,15 +49,17 @@ const Cart = () =>
 		<>
 			{cart.line_items.map(item => (
 				<div className={styles.card} key={item.id}>
+					<Link href={`/products/${item.permalink}`}>
 					<Image
 						src={item.media.source}
 						height={200}
 						width={300}
 						objectFit='cover'
 						alt={item.name}
-					/>
+						/>
+					</Link>
 					<div>
-						<h2>{item.name}</h2>
+						<div>{item.name}</div>
 						<b>Rs. {item.line_total.formatted}</b>
 						<small dangerouslySetInnerHTML={{ __html: item.description}}/>
 						<div className={styles.buttons1}>
@@ -87,13 +89,16 @@ const Cart = () =>
 		<div className={styles.center}>
 			<h1>Your Cart</h1>
 			{cart.line_items.length && (
+				<>
+				<h1>Your Cart</h1>
 				<div className={styles.options}>
 					<h2>Total : Rs. {cart.subtotal.formatted}</h2>
 					<div className={styles.buttons}>
 						<button onClick={handleEmptyCart}>EMPTY CART</button>
 						<button>CHECKOUT</button>
 					</div>
-				</div>
+					</div>
+				</>
 			)}
 			<div className={styles.main}>
 				{!cart.line_items.length ? <EmptyCart /> : <CartList />}

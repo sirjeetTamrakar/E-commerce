@@ -9,10 +9,11 @@ body {
   /* font-family: 'Mitr', sans-serif; */
   font-family: 'Montserrat', sans-serif;
   background-color: azure;
+  
 }
 
 .wrapper{
-  display: flex;
+    display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;

@@ -1,0 +1,38 @@
+.main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: slateblue;
+    padding: 1rem .5rem;
+    color: white;
+    border-radius: .5rem;
+    letter-spacing: .1rem;
+    word-spacing: .3rem;
+}
+
+.button>:first-child{
+    margin-right: 1rem;
+}

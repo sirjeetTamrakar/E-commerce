@@ -17,13 +17,15 @@ const Navbar = () =>
 	}, [cart]);
     return (
 			<div className={styles.main}>
-				<Link href='/'>E-Commerce</Link>
-					<Link href='/cart'>
-						<div className={styles.icon}>
-							<span className='material-icons'>shopping_cart</span>
-							<sup>{!cart.line_items?0:cart.total_items}</sup>
-						</div>
-					</Link>
+				<Link href='/'>
+					<b style={{cursor:'pointer'}}>E-Commerce</b>
+				</Link>
+				<Link href='/cart'>
+					<div className={styles.icon}>
+						<span className='material-icons'>shopping_cart</span>
+						<sup>{!cart.line_items ? 0 : cart.total_items}</sup>
+					</div>
+				</Link>
 			</div>
 		);
 }

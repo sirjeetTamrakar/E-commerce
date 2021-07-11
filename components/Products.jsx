@@ -12,16 +12,17 @@ const Products = ({ products, onAddToCart}) =>
 		const timeout = setTimeout(() =>
 		{
 			setAlert(false)
-		}, 2000)
+		}, 1000)
 		return () => clearTimeout(timeout)
 	}, [alert])
+	// console.log(products)
 	return (
 		<>
 			<div className={styles.center}>
 				<div className={styles.main}>
 					{products.map(product => (
 						<div className={styles.card} key={product.id}>
-							<Link href={`/${product.id}`}>
+							<Link href={`/products/${product.permalink}`}>
 								<Image
 									src={product.media.source}
 									height={200}

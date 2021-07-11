@@ -1,7 +1,6 @@
 .main{
     display: flex;
     flex-direction: column;
-    column-gap: 2rem;
     row-gap: 2rem;
     width: 85%;
 }
@@ -11,16 +10,21 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 .options{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width: 85%;
-    flex-wrap: wrap;
-    margin-top: 1rem;
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+    top: 60px;
+    margin-bottom: 1rem;
+    background-color: rgb(243, 243, 243);
+    padding: 1rem 0;
 }
 
 .card{
@@ -32,7 +36,13 @@
 }
 
 .card>div{
-    padding-left: 2rem;
+    padding-left: 2rem; 
+}
+
+.card>div>div:first-child{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
 }
 
 .buttons>button, .buttons1>button{
@@ -95,14 +105,19 @@
 }
 
 @media screen and (max-width:800px) {
-    .main{
-        grid-template-columns: repeat(2, 1fr);   
+    .options{
+        flex-direction: column;
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+
+    .button1>b{
+        padding:.3rem 0.7rem;
     }
 }
 
 @media screen and (max-width:500px) {
     .main{
-        grid-template-columns: repeat(1, 1fr);   
         width: 90%;
     }
 }
