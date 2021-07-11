@@ -13,6 +13,11 @@
     margin-top: 2rem;
 }
 
+.info{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
 .options{
     display: flex;
     flex-direction: row;

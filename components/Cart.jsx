@@ -50,18 +50,20 @@ const Cart = () =>
 			{cart.line_items.map(item => (
 				<div className={styles.card} key={item.id}>
 					<Link href={`/products/${item.permalink}`}>
-					<Image
-						src={item.media.source}
-						height={200}
-						width={300}
-						objectFit='cover'
-						alt={item.name}
+						<Image
+							src={item.media.source}
+							height={300}
+							width={200}
+							alt={item.name}
 						/>
 					</Link>
-					<div>
+					<div className={styles.info}>
+						<div>
 						<div>{item.name}</div>
-						<b>Rs. {item.line_total.formatted}</b>
-						<small dangerouslySetInnerHTML={{ __html: item.description}}/>
+						<h4>(Rs. {item.price.formatted} x {item.quantity})</h4>
+							<b>Rs. {item.line_total.formatted}</b>
+						</div>
+						<small dangerouslySetInnerHTML={{__html: item.description}} />
 						<div className={styles.buttons1}>
 							<div className={styles.button1}>
 								<span
