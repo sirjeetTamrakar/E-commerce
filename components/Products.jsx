@@ -35,14 +35,19 @@ const Products = ({ products, onAddToCart}) =>
 								<h2>{product.name}</h2>
 							</Link>
 							<b>Rs. {product.price.formatted}</b>
-							{/* <small dangerouslySetInnerHTML={{ __html: product.description.slice(0, 100) }}/> */}
-							<div
-								className={styles.buttons}
-								onClick={() => (onAddToCart(product.id, 1), setAlert(true))}
-								title='Add To Cart'
-							>
-								<span className='material-icons'>add_shopping_cart</span>
-								<div>ADD TO CART</div>
+							<div className={styles.btns}>
+								<div
+									className={styles.buttons}
+									onClick={() => (onAddToCart(product.id, 1), setAlert(true))}
+									title='Add To Cart'
+								>
+									<div>Add to Cart</div>
+								</div>
+								<Link href={`/products/${product.permalink}`}>
+									<div className={styles.details}>
+										View 
+									</div>
+								</Link>
 							</div>
 						</div>
 					))}

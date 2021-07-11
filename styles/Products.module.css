@@ -21,22 +21,35 @@
     cursor: pointer;
 }
 
+.btns{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .buttons{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
     cursor: pointer;
-    background-color: slateblue;
-    padding: 1rem .5rem;
+    background-color: rgb(107, 90, 204) ;
+    padding: .5rem;
     color: white;
     border-radius: .5rem;
-    letter-spacing: .1rem;
-    word-spacing: .3rem;
+    width: max-content;
 }
 
-.buttons>:first-child{
-    margin-right: 1rem;
+.details{
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: rgb(49, 172, 111);
+    padding: .5rem;
+    color: white;
+    border-radius: .5rem;
+    width: 5rem;
+    text-align: center;
 }
 
 .alert{

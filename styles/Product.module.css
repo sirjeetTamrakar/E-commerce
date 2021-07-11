@@ -4,13 +4,17 @@
     width: 90%;
     margin: auto;
     column-gap: 2rem;
+    height: 35rem;
 }
 
 .head{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem 0;
+}
+
+.info{
+    overflow-y:auto;
 }
 
 .buttons{
@@ -20,8 +24,9 @@
     flex-direction: column;
     row-gap: .5rem;
     cursor: pointer;
-
 }
+
+
 
 .title{
     font-size: 2rem;
@@ -31,7 +36,7 @@
 
 .button{
     margin-top: 1rem;
-    background-color: rgb(178, 174, 209);
+    background-color: #ff9f00;
     text-align: center;
     padding:.5rem;
     color: white;
@@ -41,7 +46,7 @@
 
 
 .cart{
-    background-color: rgb(231, 188, 108);
+    background-color: #fb641b;
     color: white;
     padding: .5rem;
     border-radius: .5rem;
@@ -83,5 +88,10 @@
 @media screen and (max-width:1000px) {
     .main{
         grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .info{
+        overflow-y: none;
     }
 }
