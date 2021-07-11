@@ -23,7 +23,7 @@ const Products = ({ products, onAddToCart}) =>
 				<div className={styles.main}>
 					{products.map(product => (
 						<div className={styles.card} key={product.id}>
-							<Link href={`/products/${product.permalink}`}>
+							<Link href={`/products/${product.permalink}`} passHref>
 								<Image
 									src={product.media.source}
 									className={styles.img}
@@ -33,7 +33,7 @@ const Products = ({ products, onAddToCart}) =>
 									alt={product.name}
 								/>
 							</Link>
-							<Link href={`/products/${product.permalink}`}>
+							<Link href={`/products/${product.permalink}`} passHref>
 								<h2>{product.name}</h2>
 							</Link>
 							<b>Rs. {product.price.formatted}</b>
@@ -45,7 +45,7 @@ const Products = ({ products, onAddToCart}) =>
 								>
 									<div>Add to Cart</div>
 								</div>
-								<Link href={`/products/${product.permalink}`}>
+								<Link href={`/products/${product.permalink}`} passHref>
 									<div className={styles.details}>View</div>
 								</Link>
 							</div>

@@ -17,10 +17,10 @@ const Navbar = () =>
 	}, [cart]);
     return (
 			<div className={styles.main}>
-				<Link href='/'>
-					<b style={{cursor:'pointer'}}>E-Commerce</b>
-			</Link>
-				<Link href='/cart'>
+				<Link href='/' passHref>
+					<b style={{cursor: "pointer"}}>E-Commerce</b>
+				</Link>
+				<Link href='/cart' passHref>
 					<div className={styles.icon}>
 						<span className='material-icons'>shopping_cart</span>
 						<sup>{!cart.line_items ? 0 : cart.total_items}</sup>

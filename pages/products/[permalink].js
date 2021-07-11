@@ -66,10 +66,9 @@ export default function ProductPage({ product })
 				/>
 				<div className={styles.img}>
 					{product.assets.map(asset => (
-						<div className={styles.item}>
+						<div key={asset.id} className={styles.item}>
 							<Image
 								src={asset.url}
-								key={asset.id}
 								height={55}
 								width={55}
 								objectFit='cover'
@@ -97,7 +96,7 @@ export default function ProductPage({ product })
 						>
 							<div>ADD TO CART</div>
 						</div>
-						<Link href='/cart'>
+						<Link href='/cart' passHref>
 							<div className={styles.cart}>BUY NOW</div>
 						</Link>
 					</div>

@@ -49,7 +49,7 @@ const Cart = () =>
 		<>
 			{cart.line_items.map(item => (
 				<div className={styles.card} key={item.id}>
-					<Link href={`/products/${item.permalink}`}>
+					<Link href={`/products/${item.permalink}`} passHref>
 						<Image
 							src={item.media.source}
 							height={200}
@@ -61,7 +61,9 @@ const Cart = () =>
 					<div>
 						<div>{item.name}</div>
 						<h3>Rs. {item.line_total.formatted}</h3>
-						<p style={{color:'gray'}}>(Rs. {item.price.formatted} x {item.quantity})</p>
+						<p style={{color: "gray"}}>
+							(Rs. {item.price.formatted} x {item.quantity})
+						</p>
 						<small dangerouslySetInnerHTML={{__html: item.description}} />
 						<div className={styles.buttons1}>
 							<div className={styles.button1}>
