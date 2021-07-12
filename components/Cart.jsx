@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image' 
 import styles from '../styles/Cart.module.css'
 
+
 const Cart = () =>
 {
 	const [cart, setCart] = useState({});
