@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Button } from '@material-ui/core';
 import Link from 'next/link';
+import React from 'react';
 
 const Review = ({token}) => {
     return (
@@ -18,17 +19,21 @@ const Review = ({token}) => {
 						}}
 						key={product.name}
 					>
-						<Image
-							src={product.media.source}
-							height={100}
-							width={100}
-							objectFit='contain'
-						/>
+						<div style={{cursor: "pointer"}}>
+							<Link href={`/products/${product.permalink}`} passHref>
+								<Image
+									src={product.media.source}
+									height={100}
+									width={100}
+									objectFit='contain'
+								/>
+							</Link>
+						</div>
 						<div
 							style={{
 								display: "flex",
-                                flexDirection: "column",
-                                justifyContent: 'center',
+								flexDirection: "column",
+								justifyContent: "center",
 							}}
 						>
 							<h3>{product.name}</h3>
@@ -37,7 +42,7 @@ const Review = ({token}) => {
 						<b>Rs. {product.line_total.formatted}</b>
 					</div>
 				))}
-            <h2>Total: Rs. {token.live.subtotal.formatted}</h2>
+				<h2>Total: Rs. {token.live.subtotal.formatted}</h2>
 				<Button variant='outlined'>
 					<Link href='/checkout'>Back</Link>
 				</Button>

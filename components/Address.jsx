@@ -23,8 +23,7 @@ const Address = ({next}) =>
 							<ReactForm label='Address' name='zip' required sm={12}/>
 	
 						</Grid>
-						<br />
-						<div style={{display: "flex", justifyContent: "space-between"}}>
+						<div style={{display: "flex", justifyContent: "space-between", marginTop:'3rem'}}>
 							<Button variant='outlined'>
 								<Link href='/cart'>Back to Cart</Link>
 							</Button>
