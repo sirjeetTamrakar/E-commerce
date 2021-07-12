@@ -2,18 +2,27 @@ import React, {useState, useEffect} from 'react'
 import { commerce } from '../lib/commerce'
 import Products from '../components/Products'
 
-
-const Home = () =>
+export async function getStaticProps()
 {
-	const [products, setProducts] = useState([])
+	const { data: products } = await commerce.products.list();
+	return {
+		props: {
+			products
+		}
+	}
+}
+
+const Home = ({products}) =>
+{
+	// const [products, setProducts] = useState([])
 	const [cart, setCart] = useState({})
 	console.log(products)
 
-	const fetchProducts = async () =>
-	{
-		const { data } = await commerce.products.list()
-		setProducts(data)
-	}
+	// const fetchProducts = async () =>
+	// {
+	// 	const { data } = await commerce.products.list()
+	// 	setProducts(data)
+	// }
 
 	const handleAddToCart = async (productId, quantity) =>
 	{
@@ -21,15 +30,16 @@ const Home = () =>
 		setCart(cart)
 	}
 
-	useEffect(() =>
-	{
-		fetchProducts()
-	}, [])
+	// useEffect(() =>
+	// {
+	// 	fetchProducts()
+	// }, [])
 	
 
   	return (
 			<div>
 				<Products products={products} onAddToCart={handleAddToCart} />
+				{/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
 			</div>
 		);
 }

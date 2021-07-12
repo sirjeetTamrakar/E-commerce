@@ -33,21 +33,23 @@ const Products = ({ products, onAddToCart}) =>
 									alt={product.name}
 								/>
 							</Link>
-							<Link href={`/products/${product.permalink}`} passHref>
-								<h2>{product.name}</h2>
-							</Link>
-							<b>Rs. {product.price.formatted}</b>
-							<div className={styles.btns}>
-								<div
-									className={styles.buttons}
-									onClick={() => (onAddToCart(product.id, 1), setAlert(true))}
-									title='Add To Cart'
-								>
-									<div>Add to Cart</div>
-								</div>
+							<div className={styles.info}>
 								<Link href={`/products/${product.permalink}`} passHref>
-									<div className={styles.details}>View</div>
+									<h2>{product.name}</h2>
 								</Link>
+								<b>Rs. {product.price.formatted}</b>
+								<div className={styles.btns}>
+									<div
+										className={styles.buttons}
+										onClick={() => (onAddToCart(product.id, 1), setAlert(true))}
+										title='Add To Cart'
+									>
+										<div>Add to Cart</div>
+									</div>
+									<Link href={`/products/${product.permalink}`} passHref>
+										<div className={styles.details}>View</div>
+									</Link>
+								</div>
 							</div>
 						</div>
 					))}

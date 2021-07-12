@@ -93,13 +93,15 @@ const Cart = () =>
 			<h1>Your Cart</h1>
 			{cart.line_items.length && (
 				<>
-				<h1>Your Cart</h1>
-				<div className={styles.options}>
-					<h2>Total : Rs. {cart.subtotal.formatted}</h2>
-					<div className={styles.buttons}>
-						<button onClick={handleEmptyCart}>EMPTY CART</button>
-						<button>CHECKOUT</button>
-					</div>
+					<h1>Your Cart</h1>
+					<div className={styles.options}>
+						<h2>Total : Rs. {cart.subtotal.formatted}</h2>
+						<div className={styles.buttons}>
+							<button onClick={handleEmptyCart}>EMPTY CART</button>
+							<button>
+								<Link href='/checkout'> CHECKOUT</Link>
+							</button>
+						</div>
 					</div>
 				</>
 			)}
