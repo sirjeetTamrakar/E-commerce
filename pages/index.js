@@ -39,7 +39,6 @@ const Home = ({products}) =>
   	return (
 			<div>
 				<Products products={products} onAddToCart={handleAddToCart} />
-				{/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
 			</div>
 		);
 }

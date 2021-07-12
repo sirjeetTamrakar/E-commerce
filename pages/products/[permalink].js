@@ -73,7 +73,7 @@ export default function ProductPage({ product })
 								objectFit='cover'
 								alt={product.name}
 								onClick={() => setImg(asset.url)}
-								onMouseOver={() => setImg(asset.url)}
+								onMouseEnter={() => setImg(asset.url)}
 							/>
 						</div>
 					))}

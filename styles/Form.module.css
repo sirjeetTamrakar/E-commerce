@@ -1,11 +1,27 @@
 .paper{
     background-color: white;
-    box-shadow: 2px 2px 10px grey;
+    box-shadow: 2px 2px 10px rgb(223, 223, 223);
     height:auto;
-    width: 40%;
+    min-height: 40rem;
+    width: 40rem;
     margin: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
     padding: 1rem 3rem;
+    border-radius: 1rem;
+}
+
+@media screen and (max-width:800px) {
+    .paper{
+        width: 30rem;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .paper{
+        width: 22.5rem;
+        padding: 0rem;
+    }
 }
