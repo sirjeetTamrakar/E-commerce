@@ -61,7 +61,7 @@ export default function ProductPage({ product })
 					src={img}
 					height={580}
 					width={580}
-					objectFit='cover'
+					objectFit='contain'
 					alt={product.name}
 				/>
 				<div className={styles.img}>
