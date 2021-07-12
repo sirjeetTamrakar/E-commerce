@@ -65,7 +65,6 @@ const Cart = () =>
 						<p style={{color: "gray"}}>
 							(Rs. {item.price.formatted} x {item.quantity})
 						</p>
-						<small dangerouslySetInnerHTML={{__html: item.description}} />
 						<div className={styles.buttons1}>
 							<div className={styles.button1}>
 								<span

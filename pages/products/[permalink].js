@@ -11,6 +11,7 @@ export async function getStaticProps({params}) {
 		type: "permalink",
 	});
 	
+	
 	return {
 		props: {
 			product,
@@ -38,7 +39,6 @@ export default function ProductPage({ product })
 	const [cart, setCart] = useState({});
 	const [alert, setAlert] = useState(false);
 	const [img, setImg] = useState(`${product.media.source}`)
-	console.log(img)
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -52,7 +52,6 @@ export default function ProductPage({ product })
 		setCart(cart);
 	};
 
-	console.log(product)
 
 	return (
 		<div className={styles.main}>

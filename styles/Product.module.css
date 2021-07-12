@@ -64,6 +64,7 @@
 
 .image{
     background-color: white;
+    border-radius: .3rem;
     width: 100%;
     height: max-content;
     position: relative;
