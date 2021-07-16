@@ -15,7 +15,6 @@ const Products = ({ products, onAddToCart}) =>
 		}, 1000)
 		return () => clearTimeout(timeout)
 	}, [alert])
-	// console.log(products)
 	return (
 		<>
 			<div className={styles.center}>

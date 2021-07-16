@@ -10,11 +10,14 @@ export async function getStaticProps({params}) {
 	const product = await commerce.products.retrieve(permalink, {
 		type: "permalink",
 	});
-	
+
+		const {data: products} = await commerce.products.list();
+
 	
 	return {
 		props: {
 			product,
+			products
 		},
 		revalidate:5
 	};
@@ -35,7 +38,7 @@ export async function getStaticPaths() {
 
 
 
-export default function ProductPage({ product })
+export default function ProductPage({ product, products })
 {
 	const [cart, setCart] = useState({});
 	const [alert, setAlert] = useState(false);
@@ -55,6 +58,7 @@ export default function ProductPage({ product })
 
 
 	return (
+		<>
 		<div className={styles.main}>
 			<div className={styles.image}>
 				<Image
@@ -80,6 +84,7 @@ export default function ProductPage({ product })
 					))}
 				</div>
 			</div>
+			
 
 			<div className={styles.info}>
 				<div className={styles.head}>
@@ -106,6 +111,27 @@ export default function ProductPage({ product })
 				</div>
 			</div>
 		</div>
+		<div className={styles.suggestion}>
+					{products.map(prod => (
+						<div className={styles.card1} key={prod.id}>
+							<Link href={`/products/${prod.permalink}`} passHref>
+								<Image
+									src={prod.media.source}
+									className={styles.img1}
+									height={500}
+									width={500}
+									objectFit='cover'
+									alt={prod.name}
+								/>
+							</Link>
+							<div className={styles.info1}>
+									<h4>{prod.name}</h4>
+								<b>Rs. {prod.price.formatted}</b>
+							</div>
+						</div>
+					))}
+				</div>
+		</>
 	);
 }
 

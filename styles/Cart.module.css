@@ -39,6 +39,7 @@
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 3fr;
+    box-shadow: 8px 8px 20px rgb(220, 220, 220);
 }
 
 .card>div{
@@ -59,6 +60,7 @@
     border-radius: .3rem;
     color: white;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .buttons1>button{
@@ -68,7 +70,7 @@
 }
 
 .buttons>:last-child{
-    background-color: rgb(76, 76, 219);
+    background-color: slateblue;
 }
 
 .buttons1{
@@ -112,7 +114,7 @@
 
 .home{
     margin-top: 1rem;
-    background-color: #ff9f00;
+    background-color: slateblue;
     text-align: center;
     padding:.5rem;
     color: white;
@@ -122,6 +124,7 @@
     border: none;
     font-size: 1rem;
     cursor: pointer;
+    font-weight: 600;
     transition: all .2s ease-in-out;
 }
 

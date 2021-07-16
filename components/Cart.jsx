@@ -35,17 +35,23 @@ const Cart = () =>
 		};
 
 
-	const EmptyCart = () =>
-	(
+	const EmptyCart = () => (
 		<div className={styles.empty}>
 			Your cart is empty!
 			<Link href='/'>
 				<button className={styles.home}>Shop Now</button>
 			</Link>
+			<Image
+				src='/empty.svg'
+				height={500}
+				width={500}
+				objectFit='cover'
+				alt='sagdhad'
+			/>
 		</div>
-	)
+	);
 
-	if (!cart.line_items) return 'loading...'
+	if (!cart.line_items) return <div style={{minHeight:'100vh'}}>'Loading...'</div>;
 	const CartList = () => (
 		<>
 			{cart.line_items.map(item => (
@@ -73,7 +79,12 @@ const Cart = () =>
 								>
 									{item.quantity === 1 ? "delete_outline" : "remove"}
 								</span>
-								<b>{item.quantity}</b>
+								<b
+									contentEditable
+									onChange={(e) => handleUpdate(item.id, item.quantity=e.target.value)}
+								>
+									{item.quantity}
+								</b>
 								<span
 									className='material-icons'
 									onClick={() => handleUpdate(item.id, item.quantity + 1)}
