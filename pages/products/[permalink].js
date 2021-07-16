@@ -51,6 +51,8 @@ export default function ProductPage({ product, products })
 		return () => clearTimeout(timeout);
 	}, [alert]);
 
+	useEffect
+
 
 	const handleAddToCart = async (productId, quantity) => {
 		const {cart} = await commerce.cart.add(productId, quantity);
