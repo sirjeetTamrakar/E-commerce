@@ -38,7 +38,7 @@ const Cart = () =>
 	const EmptyCart = () => (
 		<div className={styles.empty}>
 			Your cart is empty!
-			<Link href='/'>
+			<Link href='/' passHref>
 				<button className={styles.home}>Shop Now</button>
 			</Link>
 			<Image
@@ -51,7 +51,7 @@ const Cart = () =>
 		</div>
 	);
 
-	if (!cart.line_items) return <div style={{minHeight:'100vh'}}>'Loading...'</div>;
+	if (!cart.line_items) return <div style={{minHeight:'100vh'}}>Loading...</div>;
 	const CartList = () => (
 		<>
 			{cart.line_items.map(item => (
@@ -110,7 +110,7 @@ const Cart = () =>
 						<div className={styles.buttons}>
 							<button onClick={handleEmptyCart}>EMPTY CART</button>
 							<button>
-								<Link href='/checkout'> CHECKOUT</Link>
+								<Link href='/checkout' passHref> CHECKOUT</Link>
 							</button>
 						</div>
 					</div>
