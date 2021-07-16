@@ -14,16 +14,19 @@ const Form = () =>
     const [cart, setCart] = useState({});
     const [token, setToken] = useState(null)
     const [details, setDetails] = useState({})
+    const [order, setOrder] = useState({})
+    const [error, setError] = useState('')
+
 
 	const fetchCart = async () => {
 		const cart = await commerce.cart.retrieve();
 		setCart(cart);
-	};
+    };
+    
 	useEffect(() => {
 		fetchCart();
     }, []);
     
-    console.log(cart)
 
     useEffect(() => {
 		const generateToken = async () => {
@@ -31,12 +34,32 @@ const Form = () =>
 				const token = await commerce.checkout.generateToken(cart.id, {
 					type: "cart",
 				});
-				console.log(token);
 				setToken(token);
 			} catch (error) {}
 		};
         generateToken();
     }, [cart]);
+
+    const refreshCart = async () =>
+    {
+        const newCart = await commerce.cart.refresh()
+        setCart(newCart)
+    }
+
+    const handleCheckout = async (tokens, newOrder) =>
+    {
+        try
+        {
+            const incomingOrder = await commerce.checkout.capture(tokens, newOrder)
+            setOrder(incomingOrder)
+            refreshCart()
+        }
+        catch (error)
+        {
+            setError(error.data.error.message)
+        }
+    }
+
     
     const nextStep = () => setActive((prev) => prev + 1)
     const prevStep = () => setActive((prev) => prev - 1);
@@ -49,14 +72,25 @@ const Form = () =>
     
     const Confirmation = () => (
         <div>
-            Confirm
+            Thank you for choosing us
+            
         </div>
     )
 
+    console.log(order)
+
     const Checkout = () =>
-        active === 0 ?
-            <Address next={next}/> :
-            <Payment setDetails={setDetails} token={token}/>
+			active === 0 ? (
+				<Address next={next} token={token} />
+			) : (
+				<Payment
+					details={details}
+					token={token}
+					back={prevStep}
+					next={nextStep}
+					Checkout={handleCheckout}
+				/>
+			);
     return (
         <div className={styles.paper}>
             <h1>Checkout</h1>

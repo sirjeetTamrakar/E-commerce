@@ -37,12 +37,12 @@ const Cart = () =>
 
 	const EmptyCart = () =>
 	(
-		<>
+		<div className={styles.empty}>
 			Your cart is empty!
 			<Link href='/'>
-				<button>Shop Now</button>
+				<button className={styles.home}>Shop Now</button>
 			</Link>
-		</>
+		</div>
 	)
 
 	if (!cart.line_items) return 'loading...'
@@ -91,7 +91,7 @@ const Cart = () =>
 	return (
 		<div className={styles.center}>
 			<h1>Your Cart</h1>
-			{cart.line_items.length && (
+			{cart.line_items.length ? (
 				<>
 					<h1>Your Cart</h1>
 					<div className={styles.options}>
@@ -104,7 +104,7 @@ const Cart = () =>
 						</div>
 					</div>
 				</>
-			)}
+			):''}
 			<div className={styles.main}>
 				{!cart.line_items.length ? <EmptyCart /> : <CartList />}
 			</div>

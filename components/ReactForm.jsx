@@ -10,14 +10,10 @@ const ReactForm = ({ name, label, required, sm }) =>
 			<Grid item xs={12} sm={sm}>
 				<Controller
 					render={({field}) => (
-							<TextField
-								fullWidth
-								name={name}
-								label={label}
-								required={required}
-							/>
+					<TextField {...field} defaultValue='' label={label} fullWidth required={required}/>
 					)}
 					control={control}
+					name={name}
 				/>
 			</Grid>
 		);

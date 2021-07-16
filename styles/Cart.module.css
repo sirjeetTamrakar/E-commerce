@@ -103,6 +103,32 @@
     cursor: pointer;
 }
 
+.empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home{
+    margin-top: 1rem;
+    background-color: #ff9f00;
+    text-align: center;
+    padding:.5rem;
+    color: white;
+    border-radius: .5rem;
+    width: 8rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.home:hover{
+    background-color: #e0a84e;
+}
+
 @media screen and (max-width:1000px) {
     .button1>span{
         padding: 0 .4rem;

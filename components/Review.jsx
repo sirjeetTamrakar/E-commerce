@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Button } from '@material-ui/core';
 import Link from 'next/link';
 import React from 'react';
 
@@ -43,9 +42,6 @@ const Review = ({token}) => {
 					</div>
 				))}
 				<h2>Total: Rs. {token.live.subtotal.formatted}</h2>
-				<Button variant='outlined'>
-					<Link href='/checkout'>Back</Link>
-				</Button>
 			</div>
 		);
 }
