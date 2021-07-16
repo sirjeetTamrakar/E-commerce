@@ -51,6 +51,7 @@ export default function ProductPage({ product, products })
 		return () => clearTimeout(timeout);
 	}, [alert]);
 
+
 	const handleAddToCart = async (productId, quantity) => {
 		const {cart} = await commerce.cart.add(productId, quantity);
 		setCart(cart);
@@ -118,8 +119,8 @@ export default function ProductPage({ product, products })
 								<Image
 									src={prod.media.source}
 									className={styles.img1}
-									height={500}
-									width={500}
+									height={1600}
+									width={1300}
 									objectFit='cover'
 									alt={prod.name}
 								/>

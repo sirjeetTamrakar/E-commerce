@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { Stepper, Step, StepLabel } from '@material-ui/core'
 import Address from './Address'
 import Payment from './Payment'
-// import Confirmation from './Confirmation'
 import styles from '../styles/Form.module.css'
+import Image from 'next/image'
 import {commerce} from '../lib/commerce'
 
 const steps = ['Shipping Address', 'Payment Details']
@@ -71,11 +71,17 @@ const Form = () =>
     }
     
     const Confirmation = () => (
-        <div>
-            Thank you for choosing us
-            
-        </div>
-    )
+			<div>
+				<h2>Thank you for choosing us</h2>
+				<Image
+					src='/minion.jpg'
+					height={500}
+					width={500}
+					objectFit='contain'
+					alt='sagdhad'
+				/>
+			</div>
+		);
 
     console.log(order)
 
