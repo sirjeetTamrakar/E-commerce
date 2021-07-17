@@ -26,8 +26,9 @@ const Products = ({ products, onAddToCart}) =>
 								<Image
 									src={product.media.source}
 									className={styles.img}
-									height={1080}
-									width={810}
+									height={710}
+									width={710}
+									objectFit='cover'
 									alt={product.name}
 								/>
 							</Link>

@@ -41,11 +41,17 @@
     align-items: center;
     margin-top: 1rem;
     cursor: pointer;
-    background-color: rgb(107, 90, 204) ;
+    background-color: slateblue ;
     padding: .5rem;
     color: white;
     border-radius: .5rem;
     width: max-content;
+    width: 9rem;
+    transition: all .3s ease-in-out;
+}
+
+.buttons:hover{
+    background-color: rgb(80, 70, 143);
 }
 
 .details{
@@ -57,6 +63,12 @@
     border-radius: .5rem;
     width: 5rem;
     text-align: center;
+    transition: all .3s ease-in-out;
+
+}
+
+.details:hover{
+    background-color:rgb(43, 156, 99) ;
 }
 
 .img{

@@ -129,7 +129,7 @@
 }
 
 .home:hover{
-    background-color: #e0a84e;
+    background-color: rgb(80, 70, 143);
 }
 
 @media screen and (max-width:1000px) {

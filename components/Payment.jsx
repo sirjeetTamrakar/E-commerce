@@ -6,10 +6,6 @@ import Review from './Review'
 
 const Payment = ({ token, back, details, Checkout, next }) =>
 {
-	// const [stripePromise, setStripePromise] = useState(() =>
-	// 	loadStripe(process.env.STRIPE_KEY)
-	// );
-
 	const stripePromise = loadStripe(process.env.STRIPE_KEY);
 	const handleSubmit = async (event, elements, stripe) => {
     event.preventDefault();
@@ -68,9 +64,22 @@ const Payment = ({ token, back, details, Checkout, next }) =>
 				<h3>Payment Method</h3>
 				<Elements stripe={stripePromise}>
 					<ElementsConsumer>
-					{({ elements, stripe }) => (
-							<form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
+						{({elements, stripe}) => (
+							<form onSubmit={e => handleSubmit(e, elements, stripe)}>
 								<CardElement />
+								<small
+									style={{
+										display: "flex",
+										alignItems: "flex-start",
+									marginTop: "2rem",
+									justifyContent: 'space-between',
+										color:'gray', fontSize:'.8rem'
+									}}
+								>
+									Card Number: 4242 4242 4242 4242<span>Date: 04/24</span>
+									<span>CVC: 242 </span>
+									ZIP: 42424
+								</small>
 								<div
 									style={{
 										display: "flex",
@@ -78,8 +87,15 @@ const Payment = ({ token, back, details, Checkout, next }) =>
 										marginTop: "3rem",
 									}}
 								>
-									<Button variant='outlined' onClick={back}>Back</Button>
-									<Button variant='contained' color='primary' type='submit' disabled={!stripe}>
+									<Button variant='outlined' onClick={back}>
+										Back
+									</Button>
+									<Button
+										variant='contained'
+										color='primary'
+										type='submit'
+										disabled={!stripe}
+									>
 										Pay Now
 									</Button>
 								</div>

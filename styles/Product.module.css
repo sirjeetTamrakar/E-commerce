@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 3rem;
 }
 
 .info{
@@ -26,13 +27,17 @@
     flex-direction: column;
     row-gap: .5rem;
     cursor: pointer;
+    font-weight: 600;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    margin-top: 2rem;
 }
 
 .suggestion{
     display: flex;
     overflow-x: scroll;
-    width: 90%;
-    margin: 2rem auto;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .card1{
@@ -40,6 +45,11 @@
     justify-content: space-evenly;
     flex-direction: column;
     margin: 2rem 1rem;
+    align-self: top;
+}
+
+.img1:hover{
+transform: scale(1.1);
 }
 
 .card1>:first-child{
@@ -48,6 +58,8 @@
 
 .img1{
     cursor: pointer;
+    transition: all .4s ease-in-out;
+
 }
 
 .title{
@@ -57,13 +69,13 @@
 }
 
 .button{
-    margin-top: 1rem;
     background-color: #ff9f00;
     text-align: center;
     padding:.5rem;
     color: white;
     border-radius: .5rem;
     width: 10rem;
+    transition: all .2s ease-in-out;
 }
 
 
@@ -74,6 +86,15 @@
     border-radius: .5rem;
     width: 10rem;
     text-align: center;
+    transition: all .2s ease-in-out;
+}
+
+.button:hover{
+    background-color: #f59700;
+}
+
+.cart:hover{
+    background-color: #bf4c13;
 }
 
 .flex, .image{
@@ -152,6 +173,19 @@
 
     .head{
         margin-top: 5rem;
+        display: block;
+    }
+
+    .cart{
+        width: 8rem;
+    }
+
+    .buttons{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        row-gap: 0;
+        align-self: center;
     }
     .info{
         overflow-y: none;
@@ -167,8 +201,6 @@
         flex-direction: row;
         bottom: -70px;
         left: 5px;
-        /* left: auto;
-        right: auto; */
         top:auto;
         column-gap: .3rem;
     }
