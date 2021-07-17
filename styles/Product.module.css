@@ -48,9 +48,6 @@
     align-self: top;
 }
 
-.img1:hover{
-transform: scale(1.1);
-}
 
 .card1>:first-child{
     margin-left: 5rem;
@@ -59,7 +56,11 @@ transform: scale(1.1);
 .img1{
     cursor: pointer;
     transition: all .4s ease-in-out;
+    background: rgba(0,0,0,.8) ;
+}
 
+.img1:hover{
+   opacity: .9;
 }
 
 .title{

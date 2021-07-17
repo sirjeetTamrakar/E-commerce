@@ -42,7 +42,9 @@ export default function ProductPage({ product, products })
 {
 	const [cart, setCart] = useState({});
 	const [alert, setAlert] = useState(false);
-	const [img, setImg] = useState(`${product.media.source}`)
+	const [loading, setLoading] = useState(false);	
+	const [img, setImg] = useState(`${ product.media.source }`)
+	
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -50,6 +52,13 @@ export default function ProductPage({ product, products })
 		}, 2000);
 		return () => clearTimeout(timeout);
 	}, [alert]);
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setLoading(false);
+		}, 6000);
+		return () => clearTimeout(timeout);
+	}, [loading]);
 
 	useEffect(() =>
 	{
@@ -62,6 +71,16 @@ export default function ProductPage({ product, products })
 		const {cart} = await commerce.cart.add(productId, quantity);
 		setCart(cart);
 	};
+
+	if (loading) return<div style={{minHeight: "70vh", display:'flex',alignItems:'center', justifyContent:'center'}}>
+														<Image
+															src='/loading.gif'
+															height={700}
+															width={700}
+															objectFit='cover'
+															alt='sagdhad'
+														/>
+													</div>
 
 
 	return (
@@ -136,7 +155,7 @@ export default function ProductPage({ product, products })
 			</div>
 			<div className={styles.suggestion}>
 				{products.map(prod => (
-					<div className={styles.card1} key={prod.id}>
+					<div className={styles.card1} onClick={() => setLoading(true)} key={prod.id}>
 						<Link href={`/products/${prod.permalink}`} passHref>
 							<Image
 								src={prod.media.source}

@@ -6,6 +6,7 @@ import styles from "../styles/Products.module.css";
 const Products = ({ products, onAddToCart}) =>
 {
 	const [alert, setAlert] = useState(false)
+	const [loading, setLoading] = useState(false);	
 
 	useEffect(() =>
 	{
@@ -15,6 +16,33 @@ const Products = ({ products, onAddToCart}) =>
 		}, 1000)
 		return () => clearTimeout(timeout)
 	}, [alert])
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setLoading(false);
+		}, 5000);
+		return () => clearTimeout(timeout);
+	}, [loading]);
+
+	if (loading)
+		return (
+			<div
+				style={{
+					minHeight: "70vh",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
+				<Image
+					src='/loading2.gif'
+					height={700}
+					width={700}
+					objectFit='cover'
+					alt='sagdhad'
+				/>
+			</div>
+		);
 	return (
 		<>
 			<div className={styles.center}>
@@ -23,19 +51,19 @@ const Products = ({ products, onAddToCart}) =>
 					{products.map(product => (
 						<div className={styles.card} key={product.id}>
 							<Link href={`/products/${product.permalink}`} passHref>
-								<Image
-									src={product.media.source}
-									className={styles.img}
-									height={710}
-									width={710}
-									objectFit='cover'
-									alt={product.name}
-								/>
+								<span onClick={() => setLoading(true)}>
+									<Image
+										src={product.media.source}
+										className={styles.img}
+										height={710}
+										width={710}
+										objectFit='cover'
+										alt={product.name}
+									/>
+								</span>
 							</Link>
 							<div className={styles.info}>
-								<Link href={`/products/${product.permalink}`} passHref>
-									<h2>{product.name}</h2>
-								</Link>
+								<h2>{product.name}</h2>
 								<b>Rs. {product.price.formatted}</b>
 								<div className={styles.btns}>
 									<div
@@ -46,7 +74,12 @@ const Products = ({ products, onAddToCart}) =>
 										<div>Add to Cart</div>
 									</div>
 									<Link href={`/products/${product.permalink}`} passHref>
-										<div className={styles.details}>View</div>
+										<div
+											className={styles.details}
+											onClick={() => setLoading(true)}
+										>
+											View
+										</div>
 									</Link>
 								</div>
 							</div>
