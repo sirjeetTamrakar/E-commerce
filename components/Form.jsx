@@ -74,9 +74,9 @@ const Form = () =>
 			<div>
 				<h2>Thank you for choosing us</h2>
 				<Image
-					src='/minion.jpg'
-					height={500}
-					width={500}
+					src='/cart.png'
+					height={400}
+					width={400}
 					objectFit='contain'
 					alt='sagdhad'
 				/>

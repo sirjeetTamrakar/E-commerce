@@ -14,7 +14,7 @@ const Cart = () =>
 		setCart(cart);
 	};
 
-	console.log(cart)
+
 	useEffect(() => {
 		fetchCart();
 	}, []);
@@ -79,10 +79,7 @@ const Cart = () =>
 								>
 									{item.quantity === 1 ? "delete_outline" : "remove"}
 								</span>
-								<b
-									contentEditable
-									onChange={(e) => handleUpdate(item.id, item.quantity=e.target.value)}
-								>
+								<b >
 									{item.quantity}
 								</b>
 								<span

@@ -35,7 +35,7 @@ const Address = ({next, token}) =>
 
 	useEffect(() => {
 		fetchShippingCountries(token.id);
-	}, []);
+	}, [token.id]);
 
 	useEffect(() => {
 		if (shippingCountry) fetchSubdivisions(shippingCountry);

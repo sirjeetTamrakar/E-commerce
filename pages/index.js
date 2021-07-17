@@ -16,8 +16,6 @@ export async function getStaticProps()
 const Home = ({products}) =>
 {
 	const [cart, setCart] = useState({})
-	console.log(products)
-
 
 	const handleAddToCart = async (productId, quantity) =>
 	{

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { Button } from '@material-ui/core'
@@ -57,41 +57,11 @@ const Payment = ({ token, back, details, Checkout, next }) =>
 			};
 			
 		Checkout(token.id, orderData);
-		console.log(orderData)
 				  next();
       };
     }
 
 
-	// const handleSubmit = async (event, elements, stripe) =>
-	// {
-	// 	event.preventDefault()
-	// 	if (!stripe || elements) return
-	// 	const cardElement = elements.getElement(CardElement)
-	// 	const { error, paymentMethod } = await stripe.createPaymentMethod({ type: 'card', card: cardElement })
-		
-	// 	if (error)
-	// 	{
-	// 		console.log(error)
-	// 	}
-	// 	else
-	// 	{
-			// const orderData = {
-			// 	line_items: token.live.line_items,
-			// 	customer: { firstname: details.first_name, lastname: details.last_name, email: details.email, phone: details.phone },
-		 	// 	shipping: { name: 'Main', address: details.address, city: details.city, zip: details.zip },
-			// 	payment: {
-			// 		gateway: 'stripe',
-			// 		stripe: {
-			// 			payment_method_id: paymentMethod.id
-			// 		}
-			// 	}
-			// }
-	// 		Checkout(token.id, orderData)
-	// 		console.log(orderData)
-	// 		next()
-	// 	}
-	// }
     return (
 			<div>
 				<Review token={token} />

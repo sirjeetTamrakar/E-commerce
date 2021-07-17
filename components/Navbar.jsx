@@ -12,9 +12,11 @@ const Navbar = () =>
 		setCart(cart);
 	};
 
+
 	useEffect(() => {
 		fetchCart();
 	}, [cart]);
+
     return (
 			<div className={styles.main}>
 				<Link href='/' passHref>

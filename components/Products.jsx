@@ -28,7 +28,6 @@ const Products = ({ products, onAddToCart}) =>
 									className={styles.img}
 									height={1080}
 									width={810}
-									// objectFit='cover'
 									alt={product.name}
 								/>
 							</Link>

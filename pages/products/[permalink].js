@@ -32,7 +32,7 @@ export async function getStaticPaths() {
 				permalink: product.permalink,
 			},
 		})),
-		fallback: false,
+		fallback: 'blocking',
 	};
 }
 
@@ -51,7 +51,6 @@ export default function ProductPage({ product, products })
 		return () => clearTimeout(timeout);
 	}, [alert]);
 
-	useEffect
 
 
 	const handleAddToCart = async (productId, quantity) => {
