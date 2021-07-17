@@ -51,11 +51,11 @@ const Cart = () =>
 	);
 
 	if (!cart.line_items) return (
-													<div style={{minHeight: "100vh", display:'grid', placeItems:'center', top:'0'}}>
+													<div style={{minHeight: "100vh", display:'flex',alignItems:'center', justifyContent:'center', top:'0'}}>
 														<Image
 															src='/cart.gif'
-															height={200}
-															width={200}
+															height={400}
+															width={400}
 															objectFit='cover'
 															alt='sagdhad'
 														/>
