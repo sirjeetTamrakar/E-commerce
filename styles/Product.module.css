@@ -27,7 +27,7 @@
     flex-direction: column;
     row-gap: .5rem;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 800;
     font-size: .9rem;
     letter-spacing: .1rem;
     margin-top: 2rem;
@@ -70,7 +70,7 @@
 }
 
 .button{
-    background-color: #ff9f00;
+    background-color: #dd8903;
     text-align: center;
     padding:.5rem;
     color: white;
