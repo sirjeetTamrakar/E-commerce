@@ -65,13 +65,14 @@ const Cart = () =>
 		<>
 			{cart.line_items.map(item => (
 				<div className={styles.card} key={item.id}>
-					<Link href={`/products/${item.permalink}`} passHref>
+					<Link href={`/products/${ item.permalink }`} passHref >
 						<Image
 							src={item.media.source}
 							height={200}
 							width={300}
 							objectFit='cover'
 							alt={item.name}
+							
 						/>
 					</Link>
 					<div>

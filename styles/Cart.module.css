@@ -42,6 +42,9 @@
     box-shadow: 8px 8px 20px rgb(220, 220, 220);
 }
 
+.card>:first-child{
+    cursor: pointer;
+}
 .card>div{
     padding-left: 2rem; 
 }
@@ -85,7 +88,7 @@
     width: max-content;
     align-items: center;
     background-color:slateblue;
-    border-radius: .5rem;
+    border-radius: .3rem;
     color: white;
 }
 
@@ -118,7 +121,7 @@
     text-align: center;
     padding:.5rem;
     color: white;
-    border-radius: .5rem;
+    border-radius: .3rem;
     width: 8rem;
     outline: none;
     border: none;

@@ -107,7 +107,14 @@ export default function ProductPage({ product, products })
 								<div>ADD TO CART</div>
 							</div>
 							<Link href='/cart' passHref>
-								<div className={styles.cart}>BUY NOW</div>
+								<div
+									className={styles.cart}
+									onClick={() => (
+										handleAddToCart(product.id, 1)
+									)}
+								>
+									BUY NOW
+								</div>
 							</Link>
 						</div>
 					</div>
