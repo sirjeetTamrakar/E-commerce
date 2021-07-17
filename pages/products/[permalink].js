@@ -54,11 +54,8 @@ export default function ProductPage({ product, products })
 	}, [alert]);
 
 	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setLoading(false);
-		}, 6000);
-		return () => clearTimeout(timeout);
-	}, [loading]);
+		setLoading(false);
+	}, [product.id]);
 
 	useEffect(() =>
 	{
@@ -72,15 +69,15 @@ export default function ProductPage({ product, products })
 		setCart(cart);
 	};
 
-	// if (loading) return<div style={{minHeight: "70vh", display:'flex',alignItems:'center', justifyContent:'center'}}>
-	// 													<Image
-	// 														src='/loading.gif'
-	// 														height={700}
-	// 														width={700}
-	// 														objectFit='cover'
-	// 														alt='sagdhad'
-	// 													/>
-	// 												</div>
+	if (loading) return<div style={{minHeight: "70vh", display:'flex',alignItems:'center', justifyContent:'center'}}>
+														<Image
+															src='/loading.gif'
+															height={700}
+															width={700}
+															objectFit='cover'
+															alt='sagdhad'
+														/>
+													</div>
 
 
 	return (

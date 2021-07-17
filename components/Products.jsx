@@ -18,11 +18,8 @@ const Products = ({ products, onAddToCart}) =>
 	}, [alert])
 
 	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setLoading(false);
-		}, 5000);
-		return () => clearTimeout(timeout);
-	}, [loading]);
+		setLoading(false);
+	}, []);
 
 	if (loading)
 		return (
